@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.css">
+    <style>
+        body {
+            background-color: #333333;
+        }
+
+        .main {
+            width: 75%;
+            background-color: white;
+            padding: 2.5% 1%;
+            margin: 0 auto;
+            border-radius: 1rem;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin: 2.5% auto;
+        }
+
+        th {
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        td {
+            height: 2rem;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 0.5rem;
+        }
+
+        .list {
+            text-align: center;
+            width: 90%;
+            margin: 1% auto;
+        }
+
+        .list-mobile {
+            width: 17.5%;
+        }
+
+        .list-point {
+            width: 12.5%;
+        }
+
+        .list-coupon {
+            width: 50%;
+        }
+
+        .list-date {
+            width: 20%;
+        }
+
+        footer {
+            color: white;
+            text-align: center;
+            margin: 1%;
+        }
+    </style>
+
+</head>
+<script>
+    function loading() {
+        Swal.fire({
+            title: "Loading",
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false,
+            onBeforeOpen: function () {
+                Swal.showLoading();
+            }
+        });
+        google.script.run.withSuccessHandler(loadTable).getStickerCoupon();
+    }
+
+    function loadTable(data) {
+        data = JSON.parse(data);
+        let table = document.getElementById("coupon-list");
+
+        data.forEach((account, acctIndex) => {
+            let row = table.insertRow(-1);
+
+            let username = row.insertCell(-1);
+            username.innerHTML = account[0];
+            username.style = "background-color: " + (acctIndex % 2 == 1 ? "mistyrose" : "white");
+
+            let sticker = row.insertCell(-1);
+            sticker.innerHTML = account[1];
+            sticker.style = "background-color: " + (acctIndex % 2 == 1 ? "mistyrose" : "white");
+
+            let cpnIndex;
+            for (cpnIndex = 0; cpnIndex < account[3].length; cpnIndex += 2) {
+                if (cpnIndex > 0) {
+                    row = table.insertRow(-1);
+                }
+
+                if (account[3][cpnIndex] != "" || cpnIndex == 0) {
+                    let cell;
+                    cell = row.insertCell(-1);
+                    cell.innerHTML = account[3][cpnIndex];
+                    cell.style = "background-color: " + (acctIndex % 2 == 1 ? "mistyrose" : "white");
+
+                    cell = row.insertCell(-1);
+                    cell.innerHTML = account[3][cpnIndex + 1];
+                    cell.style = "background-color: " + (acctIndex % 2 == 1 ? "mistyrose" : "white");
+                }
+                else {
+                    break;
+                }
+            }
+            username.rowSpan = String(cpnIndex / 2);
+            sticker.rowSpan = String(cpnIndex / 2);
+        });
+
+        Swal.close();
+    }
+</script>
+
+<body onload="loading();">
+    <h1>McDonald Daily Coupons
+        <a href="https://github.com/Hash7ag/mcddaily-collector" target="_blank">
+            <img alt="GitHub stars" src="https://img.shields.io/github/stars/Hash7ag/mcddaily-collector?style=social">
+        </a>
+    </h1>
+    <div class="main">
+        <table id="coupon-list" class="list">
+            <tr>
+                <th class="list-mobile">Username</th>
+                <th class="list-point">Expiring Sticker</th>
+                <th class="list-coupon">Coupon</th>
+                <th class="list-date">Expire Date</th>
+            </tr>
+        </table>
+    </div>
+
+    <footer>
+        Copyright © 2020 Hash7ag All Rights Reserved
+    </footer>
+</body>
+
+</html>
