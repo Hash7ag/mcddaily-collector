@@ -9,7 +9,9 @@ Other Languages: English, [繁體中文](README.zh-tw.md)
 - Collector is built on [Google App Script](https://www.google.com/script/start/), which can help us run the script every day.
 - Everyone can use their own Google Account to launch Collector.
 
-> Note: This script might stop working in the near future, as they have changed the hashing algorithm from simple MD5 to AES encryption + Base64 hashing using a differently formatted string.
+## Notice
+- Collector does not yet support the users linking with Facebook, Google, or Apple.
+- This script might stop working in the near future, as they have changed the hashing algorithm from simple MD5 to AES encryption + Base64 hashing using a differently formatted string.
 
 ## Setup
 1. Create a spreadsheet in your [Google Drive](http://drive.google.com/), and add the second worksheets in it.
