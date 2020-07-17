@@ -38,3 +38,8 @@
 8. 透過[觸發條件](https://developers.google.com/apps-script/guides/triggers/installable#managing_triggers_manually)每天（或每小時）呼叫 `updateList` 函式更新網頁優惠卷列表。
 9. 將專案部屬為[網路應用程式](https://developers.google.com/apps-script/guides/web#deploying_a_script_as_a_web_app)。
 10. Enjoy！
+
+## 版權聲明
+著作權 © 2020 Hash7ag 部份版權所有
+
+本專案採用 [MIT 授權條款](LICENSE)
