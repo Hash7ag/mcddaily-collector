@@ -9,7 +9,9 @@
 - 本應用基於 [Google App Script](https://www.google.com/script/start/) 進行開發，每日自動化執行。
 - 使用者可以使用自己 Google 帳號進行架設。
 
-> 注意：本應用在未來隨時可能無法支援，因麥當勞報報已將簡易的 MD5 雜湊演算法換成 AES 加密演算法。
+## 注意事項
+- 本應用尚未支援透過 Facebook 、 Google 或 Apple 登入之使用者。
+- 本應用在未來隨時可能無法支援，因麥當勞報報已將簡易的 MD5 雜湊演算法換成 AES 加密演算法。
 
 ## 設置步驟
 1. 在自己的 [Google Drive](http://drive.google.com/) 新增 Google 試算表，並新增第二工作表。
