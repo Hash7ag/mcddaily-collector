@@ -36,5 +36,5 @@
 6. 透過 [clasp](https://github.com/google/clasp) 或複製貼上，將`main.js`、`mcddaily-api.js`、`library.js`及`index.html` 上傳至第三步驟所創建的專案。
 7. 透過[觸發條件](https://developers.google.com/apps-script/guides/triggers/installable#managing_triggers_manually)每天呼叫 `collect` 函式進行優惠卷抽取。
 8. 透過[觸發條件](https://developers.google.com/apps-script/guides/triggers/installable#managing_triggers_manually)每天（或每小時）呼叫 `updateList` 函式更新網頁優惠卷列表。
-9. 將專案部屬為網路應用程式。
+9. 將專案部屬為[網路應用程式](https://developers.google.com/apps-script/guides/web#deploying_a_script_as_a_web_app)。
 10. Enjoy！
