@@ -38,3 +38,8 @@ Other Languages: English, [繁體中文](README.zh-tw.md)
 8. Call the function `updateList` every day(or hour) to update the coupon list which shows on web app via [Triggers](https://developers.google.com/apps-script/guides/triggers/installable#managing_triggers_manually).
 9. Deploy your project as a [web app](https://developers.google.com/apps-script/guides/web#deploying_a_script_as_a_web_app).
 10. Enjoy!
+
+## License
+Copyright © 2020 Hash7ag Some Rights Reserved
+
+This project is licensed under the [MIT License](LICENSE).
