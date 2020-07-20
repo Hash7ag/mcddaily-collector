@@ -16,14 +16,13 @@
 ## 設置步驟
 1. 在自己的 [Google Drive](http://drive.google.com/) 新增 Google 試算表，並新增第二工作表。
 2. 於第一頁工作表輸入以下內容：
-
-|   #   |   Username   |   Password   | Token | Last Update | Last Coupon | Expiring Sticker | Next Month Sticker |
-| :---: | :----------: | :----------: | :---: | :---------: | :---------: | :--------------: | :----------------: |
-|   1   | \<您的帳號\> | \<您的密碼\> |       |             |             |                  |                    |
-|  ...  | \<更多帳號\> | \<更多密碼\> |       |             |             |                  |                    |
-> 分別於 Username 欄位及 Password 欄位輸入麥當勞報報之帳號及密碼。
-> 
-> 剩餘空白欄位請保持空白，本應用會自動化填入內容。
+    |   #   |   Username   |   Password   | Token | Last Update | Last Coupon | Expiring Sticker | Next Month Sticker |
+    | :---: | :----------: | :----------: | :---: | :---------: | :---------: | :--------------: | :----------------: |
+    |   1   | \<您的帳號\> | \<您的密碼\> |       |             |             |                  |                    |
+    |  ...  | \<更多帳號\> | \<更多密碼\> |       |             |             |                  |                    |
+    > 分別於 Username 欄位及 Password 欄位輸入麥當勞報報之帳號及密碼。
+    > 
+    > 剩餘空白欄位請保持空白，本應用會自動化填入內容。
 3. 在自己的 [Google Drive](http://drive.google.com/) 新增 [Google App Script](https://www.google.com/script/start/) 專案。
 4. 下載或複製本應用程式碼。
     ```sh
