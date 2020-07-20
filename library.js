@@ -5,7 +5,7 @@ var deviceId = "Awesome-Device",
   appVersion = "2.2.1";
 
 
-/* Remove coupon ID from the name */
+/* Remove coupon id */
 function removeId(str) {
   str = str.split("G")[0];
   if ("_( ".indexOf(str[str.length - 1]) > -1) {
@@ -14,7 +14,7 @@ function removeId(str) {
   return str;
 }
 
-/* Post Mc-API Request */
+/* Post McdDaily-API Request */
 function apiRequest(token, url) {
   var payload = {
     "access_token": token,
