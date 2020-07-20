@@ -1,4 +1,4 @@
-var sheetId = "<Sheet ID>";
+var sheetId = "<Spreadsheet ID>";
 var sheet = SpreadsheetApp.openById(sheetId).getSheets();
 
 
