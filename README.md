@@ -31,7 +31,7 @@ Other Languages: English, [繁體中文](README.zh-tw.md)
     ```
 5. Edit the variable `sheetId`, at the first line of `main.js`, to the [Spreadsheet ID](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id), which is created at Step1.
     ```javascript
-    var sheetId = "<Sheet ID>";
+    var sheetId = "<Spreadsheet ID>";
     ```
 6. Upload `main.js`, `mcddaily-api.js`, `library.js`, and `index.html` to the project created at step 3 via [clasp](https://github.com/google/clasp) or copy-paste.
 7. Call the function `collect` every day to collect coupon via [Triggers](https://developers.google.com/apps-script/guides/triggers/installable#managing_triggers_manually).

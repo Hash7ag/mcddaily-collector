@@ -31,7 +31,7 @@
     ```
 5. 將 `main.js` 第一行程式碼變數 `sheetId` 改成第一步驟所創建的[試算表 ID](https://developers.google.com/sheets/api/guides/concepts#spreadsheet_id)。
     ```javascript
-    var sheetId = "<Sheet ID>";
+    var sheetId = "<Spreadsheet ID>";
     ```
 6. 透過 [clasp](https://github.com/google/clasp) 或複製貼上，將`main.js`、`mcddaily-api.js`、`library.js`及`index.html` 上傳至第三步驟所創建的專案。
 7. 透過[觸發條件](https://developers.google.com/apps-script/guides/triggers/installable#managing_triggers_manually)每天呼叫 `collect` 函式進行優惠卷抽取。
