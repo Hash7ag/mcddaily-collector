@@ -21,8 +21,11 @@ function collect() {
             sheet[0].getRange(rowIndex + 1, 4).setValue(token);
           }
 
-          sheet[0].getRange(rowIndex + 1, 6).setValue(lottery(token));
-          sheet[0].getRange(rowIndex + 1, 5).setValue(Date.parse(Utilities.formatDate(curTime, "Asia/Taipei", "yyyy/MM/dd")) + 86400000);
+          var result = lottery(token);
+          sheet[0].getRange(rowIndex + 1, 6).setValue(result[1]);
+          if (result[0]) {
+            sheet[0].getRange(rowIndex + 1, 5).setValue(Date.parse(Utilities.formatDate(curTime, "Asia/Taipei", "yyyy/MM/dd")) + 86400000);
+          }
         }
       }
     });

@@ -54,18 +54,20 @@ function lottery(token) {
   try {
     var result = apiRequest(token, "https://api1.mcddailyapp.com/lottery/get_item");
 
-    if (result["rc"] != "1") return result["rm"];
+    if (result["rc"] != "1") throw result["rm"];
     else {
+      var item = "";
       if (Object.keys(result["results"])[0] == "coupon") {
-        return removeId(result["results"]["coupon"]["object_info"]["title"]);
+        item = result["results"]["coupon"]["object_info"]["title"];
       }
       else {
-        return removeId(result["results"][Object.keys(result["results"])[0]]["object_info"]["title"]);
+        item = result["results"][Object.keys(result["results"])[0]]["object_info"]["title"];
       }
+      return [true, removeId(item)];
     }
   }
   catch (e) {
-    return e.toString();
+    return [false, e.toString()];
   }
 }
 
