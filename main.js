@@ -37,8 +37,6 @@ function collect() {
     });
 
   sheet[0].getRange(1, 5).setValue(Utilities.formatDate(curTime, "Asia/Taipei", "yyyy/MM/dd"));
-
-  updateList();
 }
 
 
