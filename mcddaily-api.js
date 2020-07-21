@@ -36,7 +36,7 @@ function getCouponList(token) {
           if (expireDate >= curDate) {
             var cpnName = removeId(result["results"]["coupons"][i]["object_info"]["title"]),
               cpnExpireTime = result["results"]["coupons"][i]["object_info"]["redeem_end_datetime"].split(" ")[0];
-              
+
             list.push([cpnName, cpnExpireTime]);
           }
         }
@@ -92,7 +92,8 @@ function checkToken(token) {
       }
     };
   try {
-    var result = JSON.parse(UrlFetchApp.fetch("https://api.mcddaily.com.tw/verify_member_access_token", { method: "POST", contentType: "application/json", payload: JSON.stringify(payload) }));
+    var result = JSON.parse(UrlFetchApp.fetch("https://api.mcddaily.com.tw/verify_member_access_token",
+      { method: "POST", contentType: "application/json", payload: JSON.stringify(payload) }));
 
     return result["rc"] == "1";
   }
@@ -124,7 +125,8 @@ function getToken(account, password) {
     };
 
   try {
-    var result = JSON.parse(UrlFetchApp.fetch("https://api.mcddaily.com.tw/login_by_mobile", { method: "POST", contentType: "application/json", payload: JSON.stringify(payload) }));
+    var result = JSON.parse(UrlFetchApp.fetch("https://api.mcddaily.com.tw/login_by_mobile",
+      { method: "POST", contentType: "application/json", payload: JSON.stringify(payload) }));
 
     if (result["rc"] != "1") {
       return result["rm"];
