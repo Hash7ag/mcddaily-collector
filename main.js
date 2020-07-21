@@ -14,18 +14,14 @@ function collect() {
     forEach((account, rowIndex) => {
       if (rowIndex > 0) {
         if (Date.parse(curTime) > Number(account[4])) {
-          var username = account[1], password = account[2], token = account[3],
-            result = [true, ""];
+          var username = account[1], password = account[2], token = [true, account[3]];
 
-          if (!checkToken(token)) {
-            result = getToken(username, password);
-            token = result[0] ? result[1] : "ERROR";
-            sheet[0].getRange(rowIndex + 1, 4).setValue(token);
+          if (!checkToken(token[1])) {
+            token = getToken(username, password);
+            sheet[0].getRange(rowIndex + 1, 4).setValue(token[1]);
           }
 
-          if (result[0]) {
-            result = lottery(token);
-          }
+          var result = token[0] ? lottery(token[1]) : token;
 
           sheet[0].getRange(rowIndex + 1, 6).setValue(result[1]);
           if (result[0]) {
@@ -49,24 +45,22 @@ function updateList() {
   sheet[0].getDataRange().getValues().
     forEach((account, rowIndex) => {
       if (rowIndex > 0) {
-        var username = account[1], password = account[2], token = account[3],
-          result = [true, ""];
+        var username = account[1], password = account[2], token = [true, account[3]];
 
-        if (!checkToken(token)) {
-          result = getToken(username, password);
-          token = result[1];
-          sheet[0].getRange(rowIndex + 1, 4).setValue(token);
+        if (!checkToken(token[1])) {
+          token = getToken(username, password);
+          sheet[0].getRange(rowIndex + 1, 4).setValue(token[1]);
         }
 
         sheet[1].getRange(rowIndex + 1, 1).setValue(rowIndex);
-        if (result[0]) {
-          var sticker = getStickerNum(token);
+        if (token[0]) {
+          var sticker = getStickerNum(token[1]);
           if (sticker[0] >= 0 && sticker[1] >= 0) {
             sheet[0].getRange(rowIndex + 1, 7).setValue(sticker[0]);
             sheet[0].getRange(rowIndex + 1, 8).setValue(sticker[1]);
           }
 
-          getCouponList(token).
+          getCouponList(token[1]).
             forEach((coupon, cpnIndex) => {
               if (cpnIndex > cpnLength) {
                 sheet[1].getRange(1, 2 + cpnIndex * 2).setValue("Coupon");
