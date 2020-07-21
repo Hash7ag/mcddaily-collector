@@ -60,14 +60,13 @@ function updateList() {
           sheet[0].getRange(rowIndex + 1, 4).setValue(token);
         }
 
+        sheet[1].getRange(rowIndex + 1, 1).setValue(rowIndex);
         if (result[0]) {
           var sticker = getStickerNum(token);
           if (sticker[0] >= 0 && sticker[1] >= 0) {
             sheet[0].getRange(rowIndex + 1, 7).setValue(sticker[0]);
             sheet[0].getRange(rowIndex + 1, 8).setValue(sticker[1]);
           }
-
-          sheet[1].getRange(rowIndex + 1, 1).setValue(rowIndex);
 
           getCouponList(token).
             forEach((coupon, cpnIndex) => {
