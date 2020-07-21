@@ -130,10 +130,10 @@ function getToken(account, password) {
 
     if (result["rc"] != "1") throw result["rm"];
     else {
-      return result["results"]["member_info"]["access_token"];
+      return [true, result["results"]["member_info"]["access_token"]];
     }
   }
   catch (e) {
-    return e.toString();
+    return [false, e.toString()];
   }
 }
