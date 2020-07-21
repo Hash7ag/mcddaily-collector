@@ -128,9 +128,7 @@ function getToken(account, password) {
     var result = JSON.parse(UrlFetchApp.fetch("https://api.mcddaily.com.tw/login_by_mobile",
       { method: "POST", contentType: "application/json", payload: JSON.stringify(payload) }));
 
-    if (result["rc"] != "1") {
-      return result["rm"];
-    }
+    if (result["rc"] != "1") throw result["rm"];
     else {
       return result["results"]["member_info"]["access_token"];
     }
