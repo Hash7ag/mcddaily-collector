@@ -23,7 +23,7 @@ function apiRequest(token, url) {
       "device_uuid": deviceUuid,
       "platform": platform,
       "os_version": osVersion,
-      "app_version": "2.2.1",
+      "app_version": appVersion,
       "device_time": Utilities.formatDate(new Date(), "Asia/Taipei", "yyyy/MM/dd HH:mm:ss")
     }
   };

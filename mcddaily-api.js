@@ -87,7 +87,7 @@ function checkToken(token) {
         "device_uuid": deviceUuid,
         "platform": platform,
         "os_version": osVersion,
-        "app_version": "2.2.1",
+        "app_version": appVersion,
         "device_time": Utilities.formatDate(curTime, "Asia/Taipei", "yyyy/MM/dd HH:mm:ss")
       }
     };
