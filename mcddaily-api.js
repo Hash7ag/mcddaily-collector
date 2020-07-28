@@ -2,7 +2,7 @@ function getStickerNum(token) {
   try {
     var result = apiRequest(token, "https://api1.mcddailyapp.com/num/get_list"), num = [0, 0];
 
-    if (result["rc"] != "1") throw "error";
+    if (result["rc"] != "1") throw result["rm"];
     else {
       for (i in result["results"]["stickers"]) {
         var expireDate = Date.parse(result["results"]["stickers"][i]["object_info"]["expire_datetime"]),
@@ -24,7 +24,7 @@ function getCouponList(token) {
   try {
     var result = apiRequest(token, "https://api1.mcddailyapp.com/coupon/get_list"), list = [];
 
-    if (result["rc"] != "1") throw "error";
+    if (result["rc"] != "1") throw result["rm"];
     else {
       for (i in result["results"]["coupons"]) {
         if ("redeem_datetime" in result["results"]["coupons"][i]) continue;
@@ -67,7 +67,7 @@ function lottery(token) {
     }
   }
   catch (e) {
-    return [false, e.toString()];
+    return [false, String(e)];
   }
 }
 
@@ -134,6 +134,6 @@ function getToken(account, password) {
     }
   }
   catch (e) {
-    return [false, e.toString()];
+    return [false, String(e)];
   }
 }
