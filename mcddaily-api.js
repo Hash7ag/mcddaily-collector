@@ -15,7 +15,7 @@ function getStickerNum(token) {
     }
   }
   catch (e) {
-    return [-1, -1]
+    return [-1, -1];
   }
 }
 
