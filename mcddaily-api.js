@@ -1,6 +1,6 @@
 function getStickerNum(token) {
   try {
-    var result = apiRequest(token, "https://api1.mcddailyapp.com/num/get_list"), num = [0, 0];
+    var result = apiRequest(token, "https://api1.mcddailyapp.com/sticker/get_list"), num = [0, 0];
 
     if (result["rc"] != "1") throw result["rm"];
     else {
