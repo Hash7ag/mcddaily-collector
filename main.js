@@ -74,6 +74,7 @@ function updateList() {
     });
 }
 
+
 function getStickerCoupon() {
   var cpnList = sheet[1].getDataRange().getValues(),
     list = []
