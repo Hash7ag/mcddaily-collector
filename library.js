@@ -7,10 +7,16 @@ var deviceId = "Awesome-Device",
 
 /* Remove coupon id */
 function removeId(str) {
-  str = str.split("G")[0];
-  if ("_( ".indexOf(str[str.length - 1]) > -1) {
-    str = str.substr(0, str.length - 1);
+  if (str.indexOf("G") > 5) {
+    str = str.split("G")[0];
+    if ("_( ".indexOf(str[str.length - 1]) > -1) {
+      str = str.substr(0, str.length - 1);
+    }
   }
+  else if (str.indexOf("G") > -1) {
+    str = str.split(")")[1];
+  }
+
   return str;
 }
 
