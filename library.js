@@ -20,6 +20,7 @@ function removeId(str) {
   return str;
 }
 
+
 /* Post McdDaily-API Request */
 function apiRequest(token, url) {
   var payload = {
