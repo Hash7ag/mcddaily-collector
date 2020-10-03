@@ -7,14 +7,29 @@ var deviceId = "Awesome-Device",
 
 /* Remove coupon id */
 function removeId(str) {
-  if (str.indexOf("G") > 5) {
-    str = str.split("G")[0];
-    if ("_( ".indexOf(str[str.length - 1]) > -1) {
-      str = str.substr(0, str.length - 1);
-    }
+  if (str == "歡樂貼 (0)") {
+    str = "歡樂貼";
   }
-  else if (str.indexOf("G") > -1) {
-    str = str.split(")")[1];
+  else {
+    var id = "SG";
+    for (var i = 0; i < id.length; i++) {
+      if (str.indexOf(id[i]) > -1) {
+        id = id[i];
+        break;
+      }
+    }
+
+    if (id.length == 1) {
+      if (str.indexOf(id) > 5) {
+        str = str.split(id)[0];
+        if ("_( ".indexOf(str[str.length - 1]) > -1) {
+          str = str.substr(0, str.length - 1);
+        }
+      }
+      else if (str.indexOf(id) > -1) {
+        str = str.substr(str.indexOf(")") + 1);
+      }
+    }
   }
 
   return str;
