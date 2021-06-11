@@ -5,7 +5,7 @@ The coupon collector for Taiwanese [McDonald's Daily](https://www.mcdonalds.com.
 
 Other Languages: English, [繁體中文](README.zh-tw.md)
 
-## Introduction
+## Feature
 - Collector is built on [Google App Script](https://www.google.com/script/start/), which can help us run the script every day.
 - Everyone can use their own Google Account to launch Collector.
 

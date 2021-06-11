@@ -5,7 +5,7 @@
 
 其它語言：[English](README.md)、繁體中文
 
-## 介紹
+## 特色
 - 本應用基於 [Google App Script](https://www.google.com/script/start/) 進行開發，每日自動化執行。
 - 使用者可以使用自己 Google 帳號進行架設。
 
