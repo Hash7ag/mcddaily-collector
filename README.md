@@ -39,6 +39,6 @@ Other Languages: English, [繁體中文](README.zh-tw.md)
 10. Enjoy!
 
 ## License
-Copyright © 2020 Hash7ag Some Rights Reserved
+Copyright © 2020-21 Hash7ag All Rights Reserved
 
 This project is licensed under the [MIT License](LICENSE).
