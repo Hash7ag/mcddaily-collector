@@ -72,6 +72,8 @@ function updateList() {
         }
       }
     });
+
+    sheet[1].getDataRange().setNumberFormat("@");
 }
 
 
