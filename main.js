@@ -62,7 +62,7 @@ function updateList() {
             forEach((coupon, cpnIndex) => {
               if (cpnIndex > cpnLength) {
                 sheet[1].getRange(1, 2 + cpnIndex * 2).setValue("Coupon");
-                sheet[1].getRange(1, 2 + cpnIndex * 2 + 1).setValue("Expire Date");
+                sheet[1].getRange(1, 2 + cpnIndex * 2 + 1).setValue("Expiry Date");
                 cpnLength = cpnIndex;
               }
 
