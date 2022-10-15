@@ -10,6 +10,7 @@ Other Languages: English, [繁體中文](README.zh-tw.md)
 - Everyone can use their own Google Account to launch Collector.
 
 ## Notice
+- **This project is no longer supported because McDonald's Taiwan shut down McDonald's Daily application and switched to a new application.**
 - Collector does not yet support the users linking with Facebook, Google, or Apple.
 - This script might stop working in the near future, as they have changed the hashing algorithm from simple MD5 to AES encryption + Base64 hashing using a differently formatted string.
 
